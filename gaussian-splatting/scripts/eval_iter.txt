@@ -1,0 +1,12 @@
+root="/path/to/your/gaussian-splatting/data/ABO"
+count=0
+
+for file in $(ls ${root}); do
+    if [ $file != "sh" ] && [ $file != "ABO_3DGS.json" ] ; then
+        count=$(($count+1))
+        echo "Dealing with file $count"
+        CUDA_VISIBLE_DEVICES=0 python render.py -m output/ABO/$file
+        CUDA_VISIBLE_DEVICES=0 python metrics.py -m output/ABO/$file
+        # exit
+    fi
+done

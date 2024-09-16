@@ -1,0 +1,75 @@
+ps -ef | grep defunct
+ps -xH | grep objaverse | awk '{print $1}' | xargs kill -9
+
+ps -xH | grep persimmon | awk '{print $1}' | xargs kill -9
+
+---
+1. convert_SUN_to_3DGS.py
+2. sample_SUNRGBD.py
+3. running_sh.py
+4. check_SUNRGBD.py
+5. convert_3DGS_to_pkl.py
+6. make_datasets.py
+7. train_clip3.py
+---
+
+# obj->ply->xyz
+--eval 
+--init_pt 1024
+--fix_pts
+--fix_scale
+--iterations 3000
+--fix_nums 1024
+--densification_interval 501
+--model_path ./output/fix
+--skip_colmap
+--use_mask
+--update_step 100
+
+清理prompt的版本
+
+
+CUDA_VISIBLE_DEVICES=1 python train.py -s data/abo/B0723H8HJY --eval --iterations 3000 --model_path ./output/obj
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/objaverse/00a1a602456f4eb188b522d7ef19e81b --eval --iterations 3000 --model_path ./output/obj
+CUDA_VISIBLE_DEVICES=1 python render.py -m output/objaverse_human/3d56bea8818747ed8831fdb085b07c90
+
+
+
+sh /path/to/your/gaussian-splatting/data/ABO/sh/run_3.sh
+
+------
+# Objarverse
+
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/f00e5b1182af4dd89bd414a9ce3a9408 --eval --iterations 3000 --sh_degree 0 --densification_interval 501 --model_path ./output/obj
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/f00e5b1182af4dd89bd414a9ce3a9408 --eval --iterations 3000 --sh_degree 0 --init_pt 1024 --fix_nums 1024 --densification_interval 501 --model_path ./output/obj
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/00001ec0d78549e1b8c2083a06105c29 --eval --update_step 100 --iterations 3000 --sh_degree 0 --init_pt 1024 --fix_nums 1024 --densification_interval 501 --model_path ./output/obj
+CUDA_VISIBLE_DEVICES=0 python render.py -m output/obj
+CUDA_VISIBLE_DEVICES=0 python metrics.py -m output/obj
+
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/objaverse_test/0000954cf268495ca39760d3d8e11862 --eval --update_step 100 --iterations 3000 --sh_degree 0 --init_pt 1024 --fix_nums 1024 --densification_interval 501 --model_path ./output/objaverse_test/obj4
+CUDA_VISIBLE_DEVICES=0 python render.py -m output/objaverse_test/obj4
+
+----
+# SUN RGBD
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/SUNRGBD/kv1/NYUdata/NYU0001 --eval --fix_pts --iterations 500 --sh_degree 0 --skip_test
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/SUNRGBD/kv1/NYUdata/NYU0001 --eval --fix_pts --fix_scale --iterations 500 --model_path ./output/NYU0001
+CUDA_VISIBLE_DEVICES=0 python render.py -m output/NYU0001
+CUDA_VISIBLE_DEVICES=0 python metrics.py -m output/NYU0001
+
+
+CUDA_VISIBLE_DEVICES=0 python render.py -m output/SUNRGBD/kv1/b3dodata/img_0063
+----
+# MVimgnet
+
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/mv_test/0a00be23 --eval --iterations 3000 --sh_degree 0 --output_recenter --use_mask --densify_from_iter 100 --model_path ./output/0a00be23
+
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/mv_test/0a00be23 --eval --fix_nums 1024 --iterations 3000 --model_path ./output/0a00be23
+CUDA_VISIBLE_DEVICES=0 python render.py -m output/0a00be23 --skip_train
+CUDA_VISIBLE_DEVICES=0 python metrics.py -m output/0a00be23 --convert_mask
+
+
+wget -c https://hf-mirror.com/datasets/OpenShape/openshape-training-data/resolve/main/Objaverse/000-106.tar.gz 6m
+
+
+CUDA_VISIBLE_DEVICES=0 python train.py -s data/00003ef3 --eval --update_step 50 --iterations 500 --fix_nums 1024 --output_recenter --sh_degree 0 --skip_test --use_mask --densify_from_iter 99 --model_path ./output/mv_test
+CUDA_VISIBLE_DEVICES=0 python render.py -m output/mv_test

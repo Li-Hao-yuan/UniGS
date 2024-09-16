@@ -1,0 +1,25 @@
+##  Attribute Explanation
+The possible choices that may be used in data preparation are as follows
+
+--eval                          # Separate evalutaion set from the data
+--init_pt 1024                  # Control the number of initial initialization 3DGS
+--fix_pts                       # fix the location of 3DGS preventing moving and pruning
+--fix_scale                     # Set 3DGS to isotropic
+--iterations 3000               # iterations of 3DGS optimization
+--fix_nums 1024                 # Dynamically controlling the number of 3DGS, as used in the paper
+--densification_interval 501    # the interval of densification
+--model_path ./output/fix       # output dir
+--skip_colmap                   # do not use colmap, use data format of NeRF instead
+--use_mask                      # use mask for rendering loss
+--update_step 100               # the update interval of progress bar
+
+## Preparation process
+The preparation of each dataset can be found in /scripts/
+The preparation process for each dataset can be based on the following process
+
+1. run Convert_{dataset}_to_3DGS.py to transfer dataset to the format of 3DGS
+2. run sample_{dataset}.py to generate sh file for 3DGS optimization
+3. run /scripts/running_sh.py to iteratively run all sh files
+4. finally run make_datasets.py to transfer dataser from 3DGS output to trainable format for UniGS
+
+Options in different datasets can be found in the sample_{dataset}.py file
