@@ -83,18 +83,29 @@ python ./lib/eval.py \
 
 ## Results
 __Table. Summary of the experimental results on Objaverse-LVIS zero-shot classification.__
+>
+>**Default-scale training**
+>
 | Methods | Source   |  3D points   | Backbone | Avg. Top1 | Avg. Top3 | Avg. Top 5 | Dataset train| Dataset test| Representation   |
 |---------|-----------|------------------------|-----------|-----------|-----------|-------------|-------------------|-------------------|-------------------|
-|**Default-scale training**||||||
 | Uni3D | no LVIS      | 1024       | EVA02-S-patch14      | 36.72     | 57.09     | 65.18       | 100k      | 46k | point clouds
 | Uni3D   |           |                        |           | 30.47     | 48.46     | 55.87       |       |  | 3DGS              |
 | TAMM    |           |                        |           | 22.70     | 38.83     | 47.13       | ||3DGS              |
 | ReCon   |           |                        |           | 23.40     | 41.41     | 48.95       | ||3DGS              |
 | UniGS   |           |                        |           | **38.57** | **60.57** | **68.96**   | ||3DGS              |
-|**Large-scale training**||||||
+>
+>**Large-scale training**
+>
+| Methods | Source   |  3D points   | Backbone | Avg. Top1 | Avg. Top3 | Avg. Top 5 | Dataset train| Dataset test| Representation   |
+|---------|-----------|------------------------|-----------|-----------|-----------|-------------|-------------------|-------------------|-------------------|
 |Uni3D| with LVIS  |  1024   | EVA02-S-patch14      | 46.31     | 72.62     | 79.78       |  800k      | 46k | point clouds
 | UniGS   |           |                        |           | **49.95** | **75.60** | **82.38**   |    |  | 3DGS
-| **10000 3D points**   |          |                 |        |       |       |       |              |
+
+>
+>**10000 3D points**
+>
+| Methods | Source   |  3D points   | Backbone | Avg. Top1 | Avg. Top3 | Avg. Top 5 | Dataset train| Dataset test| Representation   |
+|---------|-----------|------------------------|-----------|-----------|-----------|-------------|-------------------|-------------------|-------------------|
 | TAMM（**Offical model**） | with LVIS |  **10000** | Point-BERT | 50.70 | 73.20 | 80.60 | 800k | 46k | point clouds |
 | ReCon++(**Offical model**） | |  | ViT-bigG-patch14 | 53.20 | 75.30 | 81.50 | 800k | 46k | point clouds |
 | Uni3D（**Offical model**） | |  | EVA02-S-patch14 | 50.34 | 72.70 | 79.81 | 800k | 46k | point clouds |
