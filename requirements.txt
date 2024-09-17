@@ -1,0 +1,11 @@
+torch==2.3.0
+torchaudio==2.3.0
+torchvision==0.18.0
+mmcv-full==1.6.0
+open-clip-torch==2.20.0
+
+git+https://gitlab.inria.fr/bkerbl/simple-knn.git
+git+https://github.com/graphdeco-inria/diff-gaussian-rasterization
+
+git+git://github.com/erikwijmans/Pointnet2_PyTorch.git#egg=pointnet2_ops&subdirectory=pointnet2_ops_lib
+git+git://github.com/openai/CLIP.git
