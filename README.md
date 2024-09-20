@@ -63,7 +63,7 @@ We thanks [Zero123](https://github.com/cvlab-columbia/zero123) for [the rendered
 The model training command is as follows
 
 ```Shell
-python train.py config/objaverse/objaverse_unigs.py --gpu-ids 0 1 2 3 4 5 
+python train.py config/objaverse/objaverse_unigs_classification.py --gpu-ids 0 1 2 3 4 5 
 ```
 
 ## Evaling
