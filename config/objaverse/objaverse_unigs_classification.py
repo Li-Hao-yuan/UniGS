@@ -5,7 +5,7 @@ train_cfg = dict(epoch=15)
 test_cfg = dict(
     test_gt=False, val_interval=3, dataset="abo", task='classification', test_interval=3)
 model_cfg = dict(
-    clip_model='/path/to/your/cache/ViT-B-16.pt',
+    clip_model='/path/to/your/ViT-B-16.pt',
     pointnet_model='uni3D',
     sigclip_loss=False,
     fp16=False,
@@ -23,7 +23,7 @@ model_cfg = dict(
         in_channel=6,
         model_type="parallel",
         load_pretrained=True,
-        ckpt_path='/path/to/your/cache/uni3D/uni3d-S.pt'),
+        ckpt_path='/path/to/your/uni3D/uni3d-S.pt'),
     learning_rate=0.0001,
     pts_channel=14,
     forward_all=True,

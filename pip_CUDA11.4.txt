@@ -71,7 +71,7 @@ pip                         22.3.1
 platformdirs                3.8.1
 pluggy                      1.2.0
 plyfile                     0.9
-pointnet2-ops               3.0.0                    /data1/lihaoyuan/clip3D/clip3/Pointnet2/pointnet2_ops_lib
+pointnet2-ops               3.0.0                    /path/to/your/clip3/Pointnet2/pointnet2_ops_lib
 prettytable                 3.7.0
 protobuf                    3.9.2
 psutil                      5.9.6
