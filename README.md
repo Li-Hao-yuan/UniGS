@@ -104,16 +104,12 @@ __Table. Summary of the experimental results on Objaverse-LVIS zero-shot classif
 >
 >**10000 3D points**
 >
-| Methods | Source   |  3D points   | Backbone | Avg. Top1 | Avg. Top3 | Avg. Top 5 | Dataset train| Dataset test| Representation   |
-|---------|-----------|------------------------|-----------|-----------|-----------|-------------|-------------------|-------------------|-------------------|
-| TAMM（**Offical model**） | with LVIS |  **10000** | Point-BERT | 50.70 | 73.20 | 80.60 | 800k | 46k | point clouds |
-| ReCon++(**Offical model**） | |  | ViT-bigG-patch14 | 53.20 | 75.30 | 81.50 | 800k | 46k | point clouds |
-| Uni3D（**Offical model**） | |  | EVA02-S-patch14 | 50.34 | 72.70 | 79.81 | 800k | 46k | point clouds |
-| Uni3D（**Offical model**） | |  |EVA02-S-patch14  | 49.87 | 72.39 | 79.70 | 800k | 6k | point clouds |
-| UniGS     |      |     |    EVA02-S-patch14    | 51.22 | 73.64 | 80.88   | 46k | 6k| 3DGS |
-
-## TODO
-We will supplement experiments on large-scale Objaverse dataset with 10000 3D gaussians.
+| Methods | Source   |  3D points   | Backbone | Avg. Top1 | Avg. Top3 | Avg. Top 5 | Representation   |
+|---------|-----------|------------------------|-----------|-----------|-----------|-------------|-------------------|
+| TAMM（**Offical model**） | with LVIS |  **10000** | Point-BERT | 50.70 | 73.20 | 80.60 | point clouds |
+| ReCon++(**Offical model**） | |  | ViT-bigG-patch14 | 53.20 | 75.30 | 81.50  | point clouds |
+| Uni3D（**Offical model**） | |  | EVA02-S-patch14 | 50.34 | 72.70 | 79.81 | point clouds |
+| UniGS     |      |     |    EVA02-S-patch14    | **52.44** | **75.37** | **82.71**   | 3DGS |
 
 ## Acknowledgement
 Uni3D is built using the awesome [EVA](https://github.com/baaivision/EVA), [OpenCLIP](https://github.com/mlfoundations/open_clip), [timm](https://github.com/huggingface/pytorch-image-models/), [OpenShape](https://github.com/Colin97/OpenShape_code) and [Uni3D](https://github.com/baaivision/Uni3D).
