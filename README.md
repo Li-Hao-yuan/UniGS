@@ -102,7 +102,7 @@ __Table. Summary of the experimental results on Objaverse-LVIS zero-shot classif
 | UniGS   |           |                        |           | **49.95** | **75.60** | **82.38**   |    |  | 3DGS
 
 >
->**10000 3D points**
+>**10000 3D points (under the setting of Uni3D) **
 >
 | Methods | Source   |  3D points   | Backbone | Avg. Top1 | Avg. Top3 | Avg. Top 5 | Representation   |
 |---------|-----------|------------------------|-----------|-----------|-----------|-------------|-------------------|
