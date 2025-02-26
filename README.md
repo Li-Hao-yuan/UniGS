@@ -1,6 +1,6 @@
 ## UniGS: Unified Language-Image-3D Pretraining with Gaussian Splatting
 
-- Paper: [Arxiv](xxxxx)
+- Paper: [Arxiv](https://arxiv.org/abs/2502.17860)
 - Dataset: [Huggingface](https://huggingface.co/datasets/lihy285/UniGS)
 
 
