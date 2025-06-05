@@ -112,4 +112,4 @@ __Table. Summary of the experimental results on Objaverse-LVIS zero-shot classif
 | UniGS     |      |     |    EVA02-S-patch14    | **52.44** | **75.37** | **82.71**   | 3DGS |
 
 ## Acknowledgement
-Uni3D is built using the awesome [EVA](https://github.com/baaivision/EVA), [OpenCLIP](https://github.com/mlfoundations/open_clip), [timm](https://github.com/huggingface/pytorch-image-models/), [OpenShape](https://github.com/Colin97/OpenShape_code) and [Uni3D](https://github.com/baaivision/Uni3D).
+UniGS is built using the awesome [EVA](https://github.com/baaivision/EVA), [OpenCLIP](https://github.com/mlfoundations/open_clip), [timm](https://github.com/huggingface/pytorch-image-models/), [OpenShape](https://github.com/Colin97/OpenShape_code) and [Uni3D](https://github.com/baaivision/Uni3D).
